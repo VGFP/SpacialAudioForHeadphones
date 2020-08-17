@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "/subscriptions/a60ab577-abe4-4ac9-b3f8-c66586c6ca5c/resourceGroups/BabylonAudioProject/providers/Microsoft.Web/sites/SpacialAudioForHeadphonesv02",
+    "appService.deploySubpath": "."
+}
