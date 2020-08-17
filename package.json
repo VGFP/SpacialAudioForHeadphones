@@ -1,0 +1,18 @@
+{
+  "name": "spacialaudioforheadphones",
+  "version": "0.1.0",
+  "description": "library demonstration",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "UNLICENSED",
+  "devDependencies": {
+    "@babylonjs/core": "^4.1.0",
+    "facefilter": "^1.3.1",
+    "webpack": "^4.44.1",
+    "webpack-cli": "^3.3.12",
+    "webpack-dev-server": "^3.11.0"
+  }
+}
