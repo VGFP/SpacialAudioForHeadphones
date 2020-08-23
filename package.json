@@ -4,7 +4,7 @@
   "description": "library demonstration",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"No test specified\""
+    "start": "src/index.js"
   },
   "author": "",
   "license": "UNLICENSED",
