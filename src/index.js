@@ -358,6 +358,10 @@ function detect_callback(isDetected){
     }
   }
 
+// Find initial rotation of the head
+function calibrate_rot(){
+
+};
 
 // build the 3D. called once when Jeeliz Face Filter is OK:
 function init_babylonScene(){
@@ -382,112 +386,6 @@ function init_babylonScene(){
 console.log("Finished: init_babylonScene");
 };
 
-/* 
-//angles can change from -70 degree to 70 degree (probably even less becase face detection will loose tracking of a face)
-// -70 degrees in radias is -1.22173
-// 70 degrees in radias is 1.22173
-var prev_rx = 0, prev_ry = 0, prev_rz = 0;
-var y_axis = new Vector3(0,1,0);
-var x_axis = new Vector3(1,0,0);
-var z_axis = new Vector3(0,0,1);
-
-var start_rot_x=0,start_rot_y=0,start_rot_z=0;
-function rotSpeakers(rx,ry,rz) {
-  //rotate on x axis
-  var rot_rad_x = 0;
-  //when users move head right we want to speaker to move left 
-  //if delta rx is less than 10 degrees speakers will not rotate
-  if (rx<1.23 && rx>-1.23) {
-    if (Math.abs(Math.abs(prev_rx)-Math.abs(rx))>0.25) {
-      console.log("prev_rx: " + prev_rx);
-      console.log("rx: " + rx);
-      if (prev_rx < 0 && rx< 0 || prev_rx >= 0 && rx >= 0) {
-        if (Math.abs(rx)>Math.abs(prev_rx)) {
-          rot_rad_x = rx - Math.abs(prev_rx);
-          prev_rx = rx;
-        } else {
-          rot_rad_x = -1*(rx - Math.abs(prev_rx));
-          prev_rx = rx;
-        }
-      } 
-        else {
-          if (rx<0) {
-            rot_rad_x = -1*(Math.abs(rx) + Math.abs(prev_rx));
-            prev_rx = rx;
-          } else {
-            rot_rad_x = Math.abs(rx) + Math.abs(prev_rx);
-            prev_rx = rx;
-          }
-          
-      }
-      pivot.rotate(x_axis, rot_rad_x, 1);
-    }
-}
-  
-
-  //rotate on y axis
-  //when users move head right we want to speaker to move left 
-  var rot_rad_y = 0;
-  //if delta rx is less than 10 degrees speakers will not rotate
-  if (ry<1.23 && ry>-1.23) {
-    if (Math.abs(Math.abs(prev_ry)-Math.abs(ry))>0.25) {
-      console.log("prev_ry: " + prev_ry);
-      console.log("ry: " + ry);
-      if (prev_ry < 0 && ry< 0 || prev_ry >= 0 && ry >= 0) {
-        if (Math.abs(ry)>Math.abs(prev_ry)) {
-          rot_rad_y = ry - Math.abs(prev_ry);
-          prev_ry = ry;
-        } else {
-          rot_rad_y = -1*(ry - Math.abs(prev_ry));
-          prev_ry = ry;
-        }
-      } 
-        else {
-          if (ry<0) {
-            rot_rad_y = -1*(Math.abs(ry) + Math.abs(prev_ry));
-            prev_ry = ry;
-          } else {
-            rot_rad_y = Math.abs(ry) + Math.abs(prev_ry);
-            prev_ry = ry;
-          }
-          
-      }
-      pivot.rotate(y_axis, rot_rad_y, 1);
-    }
-  }
-
-  //rotate on z axis
-  //when users move head right we want to speaker to move left 
-  var rot_rad_z = 0;
-  //if delta rx is less than 10 degrees speakers will not rotate
-  if (rz<1.23 && rz>-1.23) {
-    if (Math.abs(Math.abs(prev_rz)-Math.abs(rz))>0.25) {
-      console.log("prev_rz: " + prev_rz);
-      console.log("rz: " + rz);
-      if (prev_rz < 0 && rz< 0 || prev_rz >= 0 && rz >= 0) {
-        if (Math.abs(rz)>Math.abs(prev_rz)) {
-          rot_rad_z = rz - Math.abs(prev_rz);
-          prev_rz = rz;
-        } else {
-          rot_rad_z = -1*(rz - Math.abs(prev_rz));
-          prev_rz = rz;
-        }
-      } 
-        else {
-          if (rz<0) {
-            rot_rad_z = -1*(Math.abs(rz) + Math.abs(prev_rz));
-            prev_rz = rz;
-          } else {
-            rot_rad_z = Math.abs(rz) + Math.abs(prev_rz);
-            prev_rz = rz;
-          }
-          
-      }
-      pivot.rotate(z_axis, rot_rad_z, 1);
-    }
-  }
-}
-*/
 function main() {
   const faceFilter = require('../node_modules/facefilter/dist/jeelizFaceFilter.module.js');
 
