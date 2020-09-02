@@ -314,7 +314,7 @@ function add_SoundstoMeshes(scene) {
             break;
         }
     });
-
+/* 
     // Sphere material
     sphereMaterial = new StandardMaterial("sphereMat", scene);
     sphereMaterial.diffuseColor = Color3.Green();
@@ -344,7 +344,7 @@ function add_SoundstoMeshes(scene) {
     sphereMusicSR = Mesh.CreateSphere("sphereMusicSR", 20, 60, scene); 
     sphereMusicSR.position=new Vector3((screenWidth/2)/100,screenCenterY,-Math.sin(20)*distanceFromScreen*distanceFromScreen);
     sphereMusicSR.material = sphereMaterial;
-
+*/
     //For debugging
   console.log("Finished: add_SoundstoMeshes");
 }
