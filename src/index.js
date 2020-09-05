@@ -393,7 +393,7 @@ function main() {
     //you can also provide the canvas directly
     //using the canvas property instead of canvasId:
     canvasId: 'jeeFaceFilterCanvas',
-    NNCpath: '../node_modules/facefilter/dist/', //path to JSON neural network model (NNC.json by default)
+    NNCpath: 'https://raw.githubusercontent.com/jeeliz/jeelizFaceFilter/master/dist/', //path to JSON neural network model (NNC.json by default)
     callbackReady: function(errCode, spec){
         if (errCode){
         console.log('AN ERROR HAPPENS. ERROR CODE =', errCode);
