@@ -1,5 +1,7 @@
 # SpacialAudioForHeadphones
 
+Link to compiled version hosted on Azure: https://spacialaudiov02.z6.web.core.windows.net/
+
 To run demo you need to:
   1. Install NodeJS (prefered v14.7.0) https://nodejs.org/en/download/current/
   2. Download or clone this repo
