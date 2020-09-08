@@ -148,32 +148,42 @@ function create_BabylonCamera(scene) {
 // Used by add_SoundstoMeshes
 function add_virtualSpeakers(scene) {
   // Create material
-  speakerMaterial = new StandardMaterial("groundMat", scene);
-	speakerMaterial.diffuseColor = new Color3(0.5, 0.5, 0.5);
+  var speakerMaterialFM = new StandardMaterial("speakerMaterialFM", scene);
+  var speakerMaterialFL = new StandardMaterial("speakerMaterialFL", scene);
+  var speakerMaterialFR = new StandardMaterial("speakerMaterialFR", scene);
+  var speakerMaterialSub = new StandardMaterial("speakerMaterialSub", scene);
+  var speakerMaterialSL = new StandardMaterial("speakerMaterialSL", scene);
+  var speakerMaterialSR = new StandardMaterial("speakerMaterialSR", scene);
   // Front-Middle speaker.
-  boxFM = MeshBuilder.CreateBox("boxFM", {size: 0.01}, scene);
+  boxFM = MeshBuilder.CreateBox("boxFM", {size: 0.05}, scene);
   boxFM.position=new Vector3(0,screenCenterY,distanceFromScreen); 
-  boxFM.material = speakerMaterial;
+  speakerMaterialFM.emissiveColor = new Color3(1, 0, 0); //RED
+  boxFM.material = speakerMaterialFM;
   // Front-left speaker.
-  boxFL = MeshBuilder.CreateBox("boxFL", {size: 0.01}, scene);
+  boxFL = MeshBuilder.CreateBox("boxFL", {size: 0.05}, scene);
   boxFL.position=new Vector3((-screenWidth/2)/100,screenCenterY,distanceFromScreen/2);
-  boxFL.material = speakerMaterial;
+  speakerMaterialFL.emissiveColor = new Color3(0, 1, 0); //GREEN
+  boxFL.material = speakerMaterialFL;
   // Front-Right speaker.
-  boxFR = MeshBuilder.CreateBox("boxFR", {size: 0.01}, scene);
+  boxFR = MeshBuilder.CreateBox("boxFR", {size: 0.05}, scene);
   boxFR.position=new Vector3((screenWidth/2)/100,screenCenterY,distanceFromScreen/2);
-  boxFR.material = speakerMaterial;
+  speakerMaterialFR.emissiveColor = new Color3(0, 0, 1); //BLUE
+  boxFR.material = speakerMaterialFR;
   // Sub speaker.
-  boxSub = MeshBuilder.CreateBox("boxSub", {size: 0.01}, scene);
+  boxSub = MeshBuilder.CreateBox("boxSub", {size: 0.05}, scene);
   boxSub.position=new Vector3(((-screenWidth/2)/100)-0.5,screenCenterY-0.2,distanceFromScreen/2-0.5);
-  boxSub.material = speakerMaterial;
+  speakerMaterialSub.emissiveColor = new Color3(0.55, 0, 1); //PURPLE
+  boxSub.material = speakerMaterialSub;
   // Surround-Left speaker.
-  boxSL = MeshBuilder.CreateBox("boxSL", {size: 0.01}, scene);
+  boxSL = MeshBuilder.CreateBox("boxSL", {size: 0.05}, scene);
   boxSL.position=new Vector3((-screenWidth/2)/100,screenCenterY,-distanceFromScreen);
-  boxSL.material = speakerMaterial;
+  speakerMaterialSL.emissiveColor = new Color3(0.93, 1, 0); //YELLOW
+  boxSL.material = speakerMaterialSL;
   // Surround-Right speaker.
-  boxSR = MeshBuilder.CreateBox("boxSR", {size: 0.01}, scene);
+  boxSR = MeshBuilder.CreateBox("boxSR", {size: 0.05}, scene);
   boxSR.position=new Vector3((screenWidth/2)/100,screenCenterY,-distanceFromScreen);
-  boxSR.material = speakerMaterial;
+  speakerMaterialSR.emissiveColor = new Color3(1, 0.4, 0); //ORANGE
+  boxSR.material = speakerMaterialSR;
   console.log("Finished: add_virtualSpeakers");
 }
 
@@ -430,17 +440,6 @@ function main() {
               //ADD SMOOTHING FOR CHANGING SL AND SR POSITION!!!
               // Something is not wroking currnetly :( to be fixed
               /* 
-              // Modify distance from screen
-              const tanFOV = Math.tan(ASPECTRATIO*camera.fov/2); // tan(FOV/2), in radians
-              const W = detectState.s;  // relative width of the detection window (1-> whole width of the detection window)
-              const D = 1 / (2*W*tanFOV); // distance between the front face of the cube and the camera
-              var z=-D;
-              distanceFromScreen = -z-SETTINGS.pivotOffsetYZ[1]
-              //SL new position in 3D space
-              boxSL.position=new Vector3((-screenWidth/2)/100,screenCenterY,-Math.sin(20)*distanceFromScreen*distanceFromScreen);
-              //SR new position in 3D space
-              boxSR.position=new Vector3((screenWidth/2)/100,screenCenterY,-Math.sin(20)*distanceFromScreen*distanceFromScreen);
-              console.log("First detection: " + distanceFromScreen)
               */
             }
             else 
